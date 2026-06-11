@@ -1,1 +1,24 @@
 
+// Lista de produtos agrícolas do Paraná
+const produtos = ["Soja", "Milho", "Trigo", "Café", "Feijão", "Algodão"];
+
+// Seleciona a lista no HTML
+const listaProdutos = document.getElementById("produtos-lista");
+
+// Preenche a lista dinamicamente
+produtos.forEach(produto => {
+    const li = document.createElement("li");
+    li.textContent = produto;
+    listaProdutos.appendChild(li);
+});
+
+// Formulário de contato
+const form = document.getElementById("contato-form");
+const resposta = document.getElementById("resposta");
+
+form.addEventListener("submit", function(e) {
+    e.preventDefault();
+    const nome = document.getElementById("nome").value;
+    resposta.textContent = `Obrigado, ${nome}! Sua mensagem foi enviada.`;
+    form.reset();
+});
